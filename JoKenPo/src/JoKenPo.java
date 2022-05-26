@@ -35,8 +35,6 @@ public class JoKenPo {
 		 *    3    -     2      =  1 Usuário Ganhou
 		 */
 		
-		boolean entrada = false;
-		
 		System.out.println("---------------------------------");
 		System.out.println("SEJA BEM-VINDO AO JOKENPO DA CI&T");
 		System.out.println("POR FAVOR, ESCOLHA AS SEGUINTES OPÇÕES:");
