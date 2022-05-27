@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class JoKenPo {
 	// aqui coloca-se as variáveis
-	static int usuario;
+	static String usuario;
 	static int computador;
 
 	// Deve-se criar um jogo de jokenpo
@@ -47,13 +47,14 @@ public class JoKenPo {
 
 	public static void escolhaUsuario() {
 		Scanner leitor = new Scanner(System.in); // necessario para "ler" o imput do usuario
-		usuario = leitor.nextInt(); // usuario escolhe
+		usuario = leitor.nextLine(); // usuario escolhe, coloquei string aqui para que não estoure excecao caso o usuario
+		//escolha letra
 
-		while (usuario != 1 & usuario != 2 & usuario != 3) {
+		while (!usuario.equals("1") && !usuario.equals("2") && !usuario.equals("3")) {
 			System.out.println("Opcao invalida.");
 			System.out.println("POR FAVOR, ESCOLHA AS SEGUINTES OPÇÕES:");
 			System.out.println("1-Pedra ou 2-Papel ou 3-Tesoura: ");
-			usuario = leitor.nextInt(); // usuario escolhe
+			usuario = leitor.nextLine(); // usuario escolhe
 		}
 	}
 
@@ -81,11 +82,11 @@ public class JoKenPo {
 	}
 
 	public static void logica() {
-		
+		int result = Integer.valueOf(usuario); //tranformando string em int para o calculo do ganhador
 		// logica
-		if ((usuario - computador) == -2 || (usuario - computador) == 1) {
+		if ((result - computador) == -2 || (result - computador) == 1) {
 			System.out.println("Usuario Ganhou!");
-		} else if ((usuario - computador) == -1 || (usuario - computador) == 2) {
+		} else if ((result - computador) == -1 || (result - computador) == 2) {
 			System.out.println("Computador Ganhou!");
 		} else {
 			System.out.println("Empatou!");
